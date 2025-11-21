@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0a0e27"
+    tools:context=".MapActivity">
+
+    <!-- MapLibre Map View -->
+    <org.maplibre.android.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Dark Overlay for Better Contrast -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0a0e27"
+        android:alpha="0.05"
+        android:clickable="false" />
+
+    <!-- Top Info HUD -->
+    <LinearLayout
+        android:id="@+id/topInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:background="#1a1f3a"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="8dp">
+
+        <!-- Top Border Glow -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="12dp"
+            android:background="#00ffff"
+            android:alpha="0.8" />
+
+        <!-- Mission Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">> "
+                android:textSize="16sp"
+                android:textColor="#00ffff"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tvMissionTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="CARI CHECKPOINT 1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#00ffff"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.05"
+                android:shadowColor="#00ffff"
+                android:shadowRadius="8" />
+        </LinearLayout>
+
+        <!-- Progress Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ PROGRESS ] "
+                android:textSize="11sp"
+                android:textColor="#888888"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tvCheckpointProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/5"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#00ff88"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Distance Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ DISTANCE ] "
+                android:textSize="11sp"
+                android:textColor="#888888"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--- m"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#ff00ff"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Bottom Border Glow -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="#00ffff"
+            android:alpha="0.8" />
+    </LinearLayout>
+
+    <!-- Clue Panel (Hidden by default) -->
+    <LinearLayout
+        android:id="@+id/clueCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomButtonLayout"
+        android:layout_margin="16dp"
+        android:background="#1a1f3a"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="10dp"
+        android:visibility="gone">
+
+        <!-- Clue Header with Border -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#00ff88"
+                android:layout_alignParentTop="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💡 CLUE DATA"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#00ff88"
+                android:fontFamily="monospace"
+                android:layout_marginTop="8dp"
+                android:shadowColor="#00ff88"
+                android:shadowRadius="8" />
+        </RelativeLayout>
+
+        <!-- Clue Text -->
+        <TextView
+            android:id="@+id/tvClue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap marker untuk melihat petunjuk..."
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="2dp" />
+
+        <!-- Close Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnCloseClue"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="[ X ] CLOSE"
+                android:textSize="11sp"
+                android:textColor="#ff00ff"
+                android:background="#0a0e27"
+                android:fontFamily="monospace"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <!-- Bottom Glow Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="#00ff88"
+            android:alpha="0.6" />
+    </LinearLayout>
+
+    <!-- Bottom Control Panel -->
+    <LinearLayout
+        android:id="@+id/bottomButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Center Location Button -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp">
+
+            <!-- Button Glow -->
+            <View
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="#00ffff"
+                android:alpha="0.2" />
+
+            <Button
+                android:id="@+id/btnCenterLocation"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:text="📍"
+                android:textSize="28sp"
+                android:background="#1a1f3a"
+                android:textColor="#00ffff"
+                android:elevation="8dp"
+                android:stateListAnimator="@null" />
+        </RelativeLayout>
+
+        <!-- Show Clue Button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <!-- Button Border Effect -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentTop="true"
+                android:background="#00ff88" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="#00ff88" />
+
+            <Button
+                android:id="@+id/btnShowClue"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="&lt; SHOW CLUE >"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#00ff88"
+                android:background="#1a1f3a"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"
+                android:elevation="8dp"
+                android:stateListAnimator="@null" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Mission Complete Dialog (Hidden by default) -->
+    <RelativeLayout
+        android:id="@+id/missionCompleteCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#DD000000"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="32dp"
+            android:background="#0a0e27"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:elevation="12dp">
+
+            <!-- Top Border -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#00ffff"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Success Icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓"
+                android:textSize="72sp"
+                android:textColor="#00ff88"
+                android:layout_gravity="center"
+                android:shadowColor="#00ff88"
+                android:shadowRadius="20" />
+
+            <!-- Success Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHECKPOINT"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#00ffff"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.15"
+                android:shadowColor="#00ffff"
+                android:shadowRadius="12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COMPLETE"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#00ff88"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.15"
+                android:shadowColor="#00ff88"
+                android:shadowRadius="12"
+                android:layout_marginTop="-4dp" />
+
+            <!-- Checkpoint Name -->
+            <TextView
+                android:id="@+id/tvCompletedCheckpoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ CHECKPOINT 1 BERHASIL DITEMUKAN ]"
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="monospace"
+                android:textAlignment="center" />
+
+            <!-- Divider Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Next Button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Button Glow -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#00ffff"
+                    android:alpha="0.2" />
+
+                <Button
+                    android:id="@+id/btnNextCheckpoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text=">> NEXT CHECKPOINT"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0a0e27"
+                    android:background="#00ffff"
+                    android:fontFamily="monospace"
+                    android:elevation="4dp"
+                    android:stateListAnimator="@null" />
+            </RelativeLayout>
+
+            <!-- Bottom Border -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#00ff88"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Corner UI Elements -->
+    <!-- Top Left -->
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#00ffff"
+        android:alpha="0.6" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#00ffff"
+        android:alpha="0.6" />
+
+    <!-- Top Right -->
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#ff00ff"
+        android:alpha="0.6" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#ff00ff"
+        android:alpha="0.6" />
+
+    <!-- Bottom Left -->
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#00ff88"
+        android:alpha="0.6" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#00ff88"
+        android:alpha="0.6" />
+
+    <!-- Bottom Right -->
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#ff00ff"
+        android:alpha="0.6" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#ff00ff"
+        android:alpha="0.6" />
+
+</RelativeLayout>

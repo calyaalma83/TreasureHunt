@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0a0e27"
+    tools:context=".MainActivity">
+
+    <!-- Background Grid Effect (Optional decorative view) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:background="#1a1f3a" />
+
+    <!-- Glowing Top Accent Line -->
+    <View
+        android:id="@+id/topGlowLine"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentTop="true"
+        android:background="#00ffff"
+        android:alpha="0.8" />
+
+    <!-- Main Content Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- Logo Section -->
+        <RelativeLayout
+            android:id="@+id/logoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <!-- Outer Glow Circle -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                android:background="@android:drawable/dialog_frame"
+                android:alpha="0.3" />
+
+            <!-- Logo Icon -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_centerInParent="true"
+                android:src="@android:drawable/ic_dialog_map"
+                app:tint="#00ffff"
+                android:contentDescription="Treasure Hunt Logo" />
+        </RelativeLayout>
+
+        <!-- Title Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="32dp">
+
+            <!-- Main Title with Neon Effect -->
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TREASURE"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="#00ffff"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.15"
+                android:shadowColor="#00ffff"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20" />
+
+            <TextView
+                android:id="@+id/titleText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HUNT"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="#ff00ff"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.15"
+                android:shadowColor="#ff00ff"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                android:layout_marginTop="-8dp" />
+
+            <!-- Subtitle with Glitch Effect -->
+            <TextView
+                android:id="@+id/subtitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="// TEMUKAN HARTA TERSEMBUNYI //"
+                android:textSize="12sp"
+                android:textColor="#00ff88"
+                android:fontFamily="monospace"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.2" />
+
+            <!-- Scanning Animation Text -->
+            <TextView
+                android:id="@+id/scanningText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ SISTEM NAVIGASI AKTIF ]"
+                android:textSize="11sp"
+                android:textColor="#888888"
+                android:fontFamily="monospace"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Button Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="40dp">
+
+            <!-- Start Game Button with Neon Border -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <!-- Button Glow Effect -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#00ffff"
+                    android:alpha="0.2" />
+
+                <Button
+                    android:id="@+id/btnStartGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:text="▶ START GAME"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#0a0e27"
+                    android:background="#00ffff"
+                    android:fontFamily="sans-serif-condensed"
+                    android:letterSpacing="0.1"
+                    android:elevation="8dp"
+                    android:stateListAnimator="@null" />
+            </RelativeLayout>
+
+            <!-- How to Play Button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Border Effect -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentTop="true"
+                    android:background="#ff00ff"
+                    android:alpha="0.6" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#ff00ff"
+                    android:alpha="0.6" />
+
+                <Button
+                    android:id="@+id/btnHowToPlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:text="HOW TO PLAY"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff00ff"
+                    android:background="#1a1f3a"
+                    android:fontFamily="sans-serif-condensed"
+                    android:letterSpacing="0.1"
+                    android:elevation="4dp"
+                    android:stateListAnimator="@null" />
+            </RelativeLayout>
+
+            <!-- Info Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[ GPS: ACTIVE ]"
+                    android:textSize="10sp"
+                    android:textColor="#00ff88"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="v1.0.0"
+                    android:textSize="10sp"
+                    android:textColor="#666666"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[ ONLINE ]"
+                    android:textSize="10sp"
+                    android:textColor="#00ffff"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Corner Decorative Elements -->
+    <!-- Top Left Corner -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="#00ffff"
+        android:alpha="0.8" />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="#00ffff"
+        android:alpha="0.8" />
+
+    <!-- Top Right Corner -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ff00ff"
+        android:alpha="0.8" />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ff00ff"
+        android:alpha="0.8" />
+
+    <!-- Bottom Left Corner -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:background="#00ff88"
+        android:alpha="0.8" />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:background="#00ff88"
+        android:alpha="0.8" />
+
+    <!-- Bottom Right Corner -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ff00ff"
+        android:alpha="0.8" />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ff00ff"
+        android:alpha="0.8" />
+
+</RelativeLayout>
