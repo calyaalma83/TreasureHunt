@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0a0e27"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tips Card 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[GPS]"
+                    android:textSize="32sp"
+                    android:textColor="#00ffff"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="AKTIFKAN GPS"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ffff"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#00ffff"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pastikan GPS/Location di HP sudah aktif sebelum memulai game. Tanpa GPS, aplikasi tidak bisa mendeteksi lokasimu."
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Tips Card 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[NET]"
+                    android:textSize="32sp"
+                    android:textColor="#00ff88"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="KONEKSI INTERNET"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ff88"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#00ff88"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktifkan koneksi internet (WiFi atau Data Seluler) agar peta dapat ditampilkan dengan sempurna."
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Tips Card 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[GO]"
+                    android:textSize="32sp"
+                    android:textColor="#ff00ff"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="BERGERAK FISIK"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff00ff"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#ff00ff"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game ini membutuhkan pergerakan fisik di dunia nyata. Kamu harus benar-benar berjalan mendekati lokasi checkpoint, bukan hanya menggeser peta!"
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Tips Card 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[TIP]"
+                    android:textSize="32sp"
+                    android:textColor="#00ffff"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="GUNAKAN CLUE"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ffff"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#00ffff"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jika bingung mencari checkpoint, klik tombol 'SHOW CLUE' atau tap marker di peta untuk melihat petunjuk."
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Tips Card 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[20m]"
+                    android:textSize="32sp"
+                    android:textColor="#00ff88"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="RADIUS 20 METER"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ff88"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#00ff88"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checkpoint akan otomatis selesai ketika jarakmu &lt; 20 meter dari target. Perhatikan info jarak di bagian atas peta!"
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Tips Card 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[!]"
+                    android:textSize="32sp"
+                    android:textColor="#ff00ff"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="TETAP AMAN"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff00ff"
+                    android:fontFamily="sans-serif-condensed" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="#ff00ff"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hati-hati saat berjalan! Jangan main HP sambil menyeberang jalan atau di tempat berbahaya. Keselamatan adalah prioritas utama!"
+                android:textSize="13sp"
+                android:textColor="#cccccc"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Bottom Note -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[OK]"
+                android:textSize="40sp"
+                android:textColor="#00ffff"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELAMAT BERMAIN!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#00ffff"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="8dp"
+                android:shadowColor="#00ffff"
+                android:shadowRadius="10.0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ GOOD LUCK HUNTER ]"
+                android:textSize="11sp"
+                android:textColor="#888888"
+                android:fontFamily="monospace"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

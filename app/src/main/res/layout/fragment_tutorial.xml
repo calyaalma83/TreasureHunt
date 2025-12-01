@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0a0e27"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Card Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:elevation="8dp">
+
+            <!-- Top Border -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00ffff"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Step 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ffff"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp"
+                    android:shadowColor="#00ffff"
+                    android:shadowRadius="10.0" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TEKAN START GAME"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#00ffff"
+                        android:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Klik tombol 'Start Game' di halaman utama untuk memulai permainan."
+                        android:textSize="13sp"
+                        android:textColor="#cccccc"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ff88"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp"
+                    android:shadowColor="#00ff88"
+                    android:shadowRadius="10.0" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IZINKAN AKSES LOKASI"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#00ff88"
+                        android:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aplikasi akan meminta izin akses lokasi. Klik 'Allow' atau 'Izinkan' agar game bisa berjalan."
+                        android:textSize="13sp"
+                        android:textColor="#cccccc"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff00ff"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp"
+                    android:shadowColor="#ff00ff"
+                    android:shadowRadius="10.0" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TUNGGU GPS AKTIF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#ff00ff"
+                        android:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tunggu beberapa detik hingga GPS mendapatkan lokasimu. 5 checkpoint akan otomatis muncul di sekitarmu."
+                        android:textSize="13sp"
+                        android:textColor="#cccccc"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ffff"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp"
+                    android:shadowColor="#00ffff"
+                    android:shadowRadius="10.0" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JALAN KE CHECKPOINT"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#00ffff"
+                        android:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bergerak secara fisik di dunia nyata mendekati marker merah di peta. Lihat jarak yang terus berkurang!"
+                        android:textSize="13sp"
+                        android:textColor="#cccccc"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#00ff88"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="16dp"
+                    android:shadowColor="#00ff88"
+                    android:shadowRadius="10.0" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SELESAIKAN SEMUA!"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#00ff88"
+                        android:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ketika jarak &lt; 20 meter, checkpoint akan otomatis selesai. Lanjutkan sampai semua 5 checkpoint terkumpul!"
+                        android:textSize="13sp"
+                        android:textColor="#cccccc"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bottom Border -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00ff88"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <!-- Info Box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1f3a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[i]"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#00ffff"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Klik marker di peta untuk melihat clue atau gunakan tombol 'SHOW CLUE' untuk mendapatkan petunjuk."
+                android:textSize="12sp"
+                android:textColor="#cccccc"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

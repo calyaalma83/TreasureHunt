@@ -6,8 +6,8 @@ import java.util.Random;
 public class CheckpointData {
 
     // Radius dalam meter untuk generate checkpoint di sekitar user
-    private static final double MIN_RADIUS = 30;  // Minimal 30 meter dari user
-    private static final double MAX_RADIUS = 100; // Maksimal 100 meter dari user
+    private static final double MIN_RADIUS = 10;  // Minimal 30 meter dari user
+    private static final double MAX_RADIUS = 30; // Maksimal 100 meter dari user
 
     // Array nama dan clue untuk checkpoint
     private static final String[] CHECKPOINT_NAMES = {

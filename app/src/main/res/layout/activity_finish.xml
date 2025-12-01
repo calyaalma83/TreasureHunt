@@ -51,7 +51,7 @@
                     android:text="🏆"
                     android:textSize="100sp"
                     android:shadowColor="#00ffff"
-                    android:shadowRadius="30" />
+                    android:shadowRadius="30.0" />
 
                 <!-- Mission Complete Title -->
                 <TextView
@@ -64,7 +64,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:letterSpacing="0.15"
                     android:shadowColor="#00ffff"
-                    android:shadowRadius="20"
+                    android:shadowRadius="20.0"
                     android:layout_marginTop="24dp" />
 
                 <TextView
@@ -77,7 +77,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:letterSpacing="0.15"
                     android:shadowColor="#00ff88"
-                    android:shadowRadius="20"
+                    android:shadowRadius="20.0"
                     android:layout_marginTop="-8dp" />
 
                 <!-- Subtitle -->
@@ -121,7 +121,7 @@
                     android:fontFamily="monospace"
                     android:layout_gravity="center"
                     android:shadowColor="#00ffff"
-                    android:shadowRadius="8" />
+                    android:shadowRadius="8.0" />
 
                 <!-- Divider -->
                 <View
@@ -166,7 +166,7 @@
                         android:textColor="#00ffff"
                         android:fontFamily="monospace"
                         android:shadowColor="#00ffff"
-                        android:shadowRadius="8" />
+                        android:shadowRadius="8.0" />
                 </LinearLayout>
 
                 <!-- Total Score -->
@@ -204,7 +204,7 @@
                         android:textColor="#00ff88"
                         android:fontFamily="monospace"
                         android:shadowColor="#00ff88"
-                        android:shadowRadius="8" />
+                        android:shadowRadius="8.0" />
                 </LinearLayout>
 
                 <!-- Time Taken -->
@@ -241,7 +241,7 @@
                         android:textColor="#ff00ff"
                         android:fontFamily="monospace"
                         android:shadowColor="#ff00ff"
-                        android:shadowRadius="8" />
+                        android:shadowRadius="8.0" />
                 </LinearLayout>
 
                 <!-- Bottom Border -->

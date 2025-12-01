@@ -79,7 +79,7 @@
                 android:shadowColor="#00ffff"
                 android:shadowDx="0"
                 android:shadowDy="0"
-                android:shadowRadius="20" />
+                android:shadowRadius="20.0" />
 
             <TextView
                 android:id="@+id/titleText2"
@@ -94,7 +94,7 @@
                 android:shadowColor="#ff00ff"
                 android:shadowDx="0"
                 android:shadowDy="0"
-                android:shadowRadius="20"
+                android:shadowRadius="20.0"
                 android:layout_marginTop="-8dp" />
 
             <!-- Subtitle with Glitch Effect -->

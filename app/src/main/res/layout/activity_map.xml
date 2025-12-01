@@ -68,7 +68,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:letterSpacing="0.05"
                 android:shadowColor="#00ffff"
-                android:shadowRadius="8" />
+                android:shadowRadius="8.0" />
         </LinearLayout>
 
         <!-- Progress Bar -->
@@ -168,7 +168,7 @@
                 android:fontFamily="monospace"
                 android:layout_marginTop="8dp"
                 android:shadowColor="#00ff88"
-                android:shadowRadius="8" />
+                android:shadowRadius="8.0" />
         </RelativeLayout>
 
         <!-- Clue Text -->
@@ -271,7 +271,7 @@
                 android:id="@+id/btnShowClue"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:text="&lt; SHOW CLUE >"
+                android:text="&lt; SHOW CLUE &gt;"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#00ff88"
@@ -318,7 +318,7 @@
                 android:textColor="#00ff88"
                 android:layout_gravity="center"
                 android:shadowColor="#00ff88"
-                android:shadowRadius="20" />
+                android:shadowRadius="20.0" />
 
             <!-- Success Title -->
             <TextView
@@ -333,7 +333,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:letterSpacing="0.15"
                 android:shadowColor="#00ffff"
-                android:shadowRadius="12" />
+                android:shadowRadius="12.0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -346,7 +346,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:letterSpacing="0.15"
                 android:shadowColor="#00ff88"
-                android:shadowRadius="12"
+                android:shadowRadius="12.0"
                 android:layout_marginTop="-4dp" />
 
             <!-- Checkpoint Name -->

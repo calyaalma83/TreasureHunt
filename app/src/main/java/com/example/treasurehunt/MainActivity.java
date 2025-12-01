@@ -1,6 +1,5 @@
 package com.example.treasurehunt;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
@@ -25,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
         playScanningAnimation();
 
+        // Tombol Start Game -> MapActivity
         btnStartGame.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MapActivity.class);
             startActivity(intent);
         });
 
-        btnHowToPlay.setOnClickListener(v -> showHowToPlayPopup());
+        // Tombol How To Play -> HowToPlayActivity (Fragment)
+        btnHowToPlay.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void playScanningAnimation() {
@@ -39,22 +43,5 @@ public class MainActivity extends AppCompatActivity {
         fade.setRepeatCount(Animation.INFINITE);
         fade.setRepeatMode(Animation.REVERSE);
         scanningText.startAnimation(fade);
-    }
-
-    private void showHowToPlayPopup() {
-        new AlertDialog.Builder(this)
-                .setTitle("HOW TO PLAY")
-                .setMessage(
-                        "1. Tekan START GAME.\n" +
-                                "2. Kamu akan diarahkan ke MAP.\n" +
-                                "3. Bergeraklah mendekati lokasi harta.\n" +
-                                "4. Jika jarak kamu < 30 meter – kamu menang!\n\n" +
-                                "// TIP:\n" +
-                                "- Aktifkan GPS.\n" +
-                                "- Bergerak secara fisik di dunia nyata.\n" +
-                                "- Hati-hati di jalan :)"
-                )
-                .setPositiveButton("OK", null)
-                .show();
     }
 }
