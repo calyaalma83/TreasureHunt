@@ -1,11 +1,14 @@
 package com.example.treasurehunt;
 
+import org.maplibre.android.annotations.Marker;
+
 public class Checkpoint {
     private String name;
     private String clue;
     private double latitude;
     private double longitude;
     private boolean completed;
+    private Marker marker;
 
     // Constructor
     public Checkpoint(String name, String clue, double latitude, double longitude) {
@@ -76,5 +79,13 @@ public class Checkpoint {
                 ", longitude=" + longitude +
                 ", completed=" + completed +
                 '}';
+    }
+
+    public Marker getMarker() {
+        return marker;
+    }
+
+    public void setMarker(Marker marker) {
+        this.marker = marker;
     }
 }

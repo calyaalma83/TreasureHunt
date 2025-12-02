@@ -3,6 +3,10 @@ package com.example.treasurehunt;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
@@ -26,6 +30,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.Priority;
 
 import org.maplibre.android.MapLibre;
+import org.maplibre.android.annotations.Marker;
 import org.maplibre.android.annotations.MarkerOptions;
 import org.maplibre.android.camera.CameraPosition;
 import org.maplibre.android.camera.CameraUpdateFactory;
@@ -37,6 +42,8 @@ import org.maplibre.android.location.modes.RenderMode;
 import org.maplibre.android.maps.MapLibreMap;
 import org.maplibre.android.maps.MapView;
 import org.maplibre.android.maps.Style;
+import org.maplibre.android.annotations.Icon;
+import org.maplibre.android.annotations.IconFactory;
 
 import java.util.ArrayList;
 
@@ -66,6 +73,29 @@ public class MapActivity extends AppCompatActivity {
 
     // Map Style URL (gunakan style yang reliable)
     private static final String STYLE_URL = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+
+    private Icon iconRed;
+    private Icon iconGrey;
+
+    private Bitmap getBitmapFromVector(int drawableId) {
+        Drawable drawable = ContextCompat.getDrawable(this, drawableId);
+
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(
+                drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight(),
+                Bitmap.Config.ARGB_8888
+        );
+
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +139,12 @@ public class MapActivity extends AppCompatActivity {
         btnShowClue = findViewById(R.id.btnShowClue);
         btnCloseClue = findViewById(R.id.btnCloseClue);
         btnNextCheckpoint = findViewById(R.id.btnNextCheckpoint);
+        IconFactory iconFactory = IconFactory.getInstance(this);
+        Bitmap redBitmap = getBitmapFromVector(R.drawable.ic_marker_red);
+        Bitmap greyBitmap = getBitmapFromVector(R.drawable.ic_marker_grey);
+        iconRed = iconFactory.fromBitmap(redBitmap);
+        iconGrey = iconFactory.fromBitmap(greyBitmap);
+
     }
 
     private void initCheckpoints() {
@@ -213,13 +249,14 @@ public class MapActivity extends AppCompatActivity {
     private void addCheckpointMarkers() {
         if (mapLibreMap == null || checkpoints == null) return;
 
-        for (Checkpoint checkpoint : checkpoints) {
-            if (!checkpoint.isCompleted()) {
-                mapLibreMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(checkpoint.getLatitude(), checkpoint.getLongitude()))
-                        .title(checkpoint.getName())
-                        .snippet(checkpoint.getClue()));
-            }
+        for (Checkpoint cp : checkpoints) {
+            Marker marker = mapLibreMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(cp.getLatitude(), cp.getLongitude()))
+                    .title(cp.getName())
+                    .icon(iconRed)
+            );
+
+            cp.setMarker(marker);
         }
     }
 
@@ -311,11 +348,24 @@ public class MapActivity extends AppCompatActivity {
         currentCp.setCompleted(true);
         completedCount++;
 
-        // Tampilkan popup mission complete
+        // Ganti marker jadi abu-abu
+        if (currentCp.getMarker() != null) {
+            Marker oldMarker = currentCp.getMarker();
+            mapLibreMap.removeMarker(oldMarker);
+
+            Marker greyMarker = mapLibreMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(currentCp.getLatitude(), currentCp.getLongitude()))
+                    .title(currentCp.getName())
+                    .icon(iconGrey)
+            );
+
+            currentCp.setMarker(greyMarker);
+        }
+
+        // Popup success
         tvCompletedCheckpoint.setText("[ " + currentCp.getName().toUpperCase() + " BERHASIL DITEMUKAN ]");
         missionCompleteCard.setVisibility(View.VISIBLE);
 
-        // Cek apakah semua checkpoint selesai
         if (completedCount >= checkpoints.size()) {
             btnNextCheckpoint.setText(">> FINISH GAME");
             btnNextCheckpoint.setOnClickListener(v -> {
